@@ -168,6 +168,7 @@ function install_wordpress {
     mkdir /tmp/wordpress.$$
     wget -O - http://wordpress.org/latest.tar.gz | \
         tar zxf - -C /tmp/wordpress.$$
+    mkdir "/var/www/$1"
     mv /tmp/wordpress.$$/wordpress "/var/www/$1"
     rm -rf /tmp/wordpress.$$
     chown nginx:nginx -R "/var/www/$1"
